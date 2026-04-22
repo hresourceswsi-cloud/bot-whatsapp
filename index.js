@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
+app.get('/', (req, res) => {
+  res.send("Bot funcionando");
+});
 
 app.post('/webhook', (req, res) => {
   const message = req.body.Body;
